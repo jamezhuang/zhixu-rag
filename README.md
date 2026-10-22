@@ -52,16 +52,14 @@
 | 持久化与恢复 | LangGraph 检查点、请求幂等、数据库租约与失败重试 | [service.py](backend/app/service.py)、[main.py](backend/app/main.py) |
 | 知识管理 | 上传、预览、草稿编辑、发布、停用、版本替换与分类维护 | [knowledge.py](backend/app/knowledge.py)、[Admin.vue](frontend/src/Admin.vue) |
 | 账号与反馈 | 员工会话隔离，管理员维护账号、查看问答与反馈 | [main.py](backend/app/main.py)、[db.py](backend/app/db.py) |
-| 可观测性 | 节点事件、重试轮次、压缩记录、API 用量；可配置 LangSmith | [providers.py](backend/app/providers.py)、[Admin.vue](frontend/src/Admin.vue) |
+| 本地运行记录 | 节点事件、重试轮次、压缩记录与 API 用量 | [providers.py](backend/app/providers.py)、[Admin.vue](frontend/src/Admin.vue) |
 | 停止生成 | 输入框右下角切换停止按钮，取消模型连接并阻止后续节点执行 | [Chat.vue](frontend/src/Chat.vue)、[cancellation.py](backend/app/cancellation.py) |
-| 飞书入口 | 私聊文本、员工绑定、来源回复与会话复用；需应用凭据联调 | [feishu.py](backend/app/feishu.py) |
 
 ## 系统架构
 
 ```mermaid
 flowchart TD
     WEB[员工对话页面] --> API[FastAPI / 身份与会话校验]
-    FS[飞书私聊入口] --> API
     ADMIN[管理员后台] --> KB[文档解析 / 分块 / 版本发布]
     KB --> PG[(PostgreSQL / 文档与片段)]
     KB --> VEC[(Milvus / HNSW)]
@@ -75,7 +73,6 @@ flowchart TD
     MODEL --> GRAPH
     GRAPH --> OUT[核验后的回答 / 文档来源]
     GRAPH --> SAVE[(持久化检查点 / 运行记录)]
-    GRAPH -. 配置后追踪 .-> TRACE[LangSmith]
 ```
 
 ### LangGraph 工作流
@@ -262,7 +259,7 @@ npm run dev --prefix frontend
 | 试用期运营 `operator` | `Welcome@2026` |
 | 正式客服 `support` | `Welcome@2026` |
 
-默认密码仅用于首次 demo 初始化；live 首次初始化需自行设置密码，已有账号不会被环境变量覆盖。真实模型、BGE 下载、Docker、飞书与 LangSmith 配置见[运行与复现](运行与复现.md)。
+默认密码仅用于首次 demo 初始化；live 首次初始化需自行设置密码，已有账号不会被环境变量覆盖。真实模型、BGE 下载与 Docker 配置见[运行与复现](运行与复现.md)；飞书与 LangSmith 的接入列入后续方向。
 
 ## 测试与复现
 
@@ -288,13 +285,12 @@ npm run dev --prefix frontend
 | 历史回查 | `memory_context` 的回查与移出消息 ID |
 | API 用量 | 模型调用与用量 → 每次 `usage`；输入、输出和总量分别统计，Embedding 单列 |
 | 摘要与身份记忆 | PostgreSQL `conversations` 表的 `summary / summary_until / memory` |
-| LangSmith 链接 | 配置有效凭据并成功追踪后从运行详情跳转；流程恢复由检查点负责 |
 
 ## 代码与文档导航
 
 | 路径 | 内容 |
 |---|---|
-| [backend/app/](backend/app/) | API、图流程、检索、知识库、压缩、记忆、取消与飞书 |
+| [backend/app/](backend/app/) | API、图流程、检索、知识库、压缩、记忆与取消 |
 | [backend/tests/](backend/tests/) | 权限、版本、分支、预算、恢复与取消测试 |
 | [frontend/src/](frontend/src/) | 员工对话、管理员后台与来源侧栏 |
 | [evaluation/retrieval_v1/](evaluation/retrieval_v1/) | 冻结语料、54条测试题与标签 |
@@ -312,7 +308,8 @@ npm run dev --prefix frontend
 | 数据 | 模拟短文档、自建小题集 | 长文档、更多口语问题、独立人工标注 |
 | 效果归因 | 已有检索、忠实度与分块实验；尚无完整图流程的量化收益结论 | 多跳、反思与记忆的受控对照实验 |
 | 文档解析 | 支持 Markdown/TXT、DOCX、文字型 PDF，不支持扫描件 | OCR 与复杂表格解析 |
-| 外部入口 | 飞书代码已实现，真实联调需凭据；未实现扣子入口 | 实际应用联调与更多入口适配 |
+| 飞书与外部入口 | 已有飞书适配代码，尚未完成真实联调，不计入当前已验证能力；未实现扣子入口 | 配置飞书应用，验证员工绑定、私聊问答、来源回复与会话复用，再扩展其他入口 |
+| LangSmith 全链路追踪 | 当前使用本地节点事件、压缩记录与 API 用量；LangSmith 不计入当前已验证能力 | 配置并验证 LangSmith 追踪，关联请求、会话、节点与模型调用，提供可访问的链路详情 |
 | 交互 | 核验完成后展示回答，支持取消；尚无逐 Token 流式输出 | 节点进度展示与流式体验 |
 | 记忆保护 | 规则识别关键条件，原文保留；不能保证识别所有条件 | 条件遗漏与纠正专项测试 |
 | 性能 | 本地单 worker、小型知识库，未验证高并发 | 吞吐、P95 时延、索引与 BM25 缓存实验 |
