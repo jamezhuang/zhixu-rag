@@ -1,0 +1,18 @@
+import { chromium } from '../frontend/node_modules/@playwright/test/index.mjs'
+import { mkdir } from 'node:fs/promises'
+await mkdir('data/screenshots', { recursive: true })
+const browser = await chromium.launch({ headless: true })
+const page = await browser.newPage({ viewport: { width: 1440, height: 960 }, deviceScaleFactor: 1 })
+await page.goto('http://127.0.0.1:5173')
+await page.getByRole('button', { name: '运营员工', exact: true }).waitFor()
+await page.screenshot({ path: 'data/screenshots/login.png', fullPage: true })
+await page.getByRole('button', { name: '运营员工', exact: true }).click()
+await page.getByRole('button', { name: '进入工作台' }).click()
+await page.getByRole('heading', { name: /知识助手\s*有据可循/ }).waitFor()
+await page.screenshot({ path: 'data/screenshots/employee.png', fullPage: true })
+await page.getByRole('button', { name: '退出登录', exact: true }).click()
+await page.getByRole('button', { name: '管理员', exact: true }).click()
+await page.getByRole('button', { name: '进入工作台' }).click()
+await page.getByRole('heading', { name: '工作台概览' }).waitFor()
+await page.screenshot({ path: 'data/screenshots/admin.png', fullPage: true })
+await browser.close()

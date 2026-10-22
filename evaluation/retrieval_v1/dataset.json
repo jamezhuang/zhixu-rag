@@ -1,0 +1,925 @@
+{
+  "name": "zhixu-onboarding-retrieval-v1",
+  "label_status": "author-specified, source-quote validated; independent review pending",
+  "scope": "single-turn retrieval comparison; no memory, query rewriting or graph hops",
+  "corpus": [
+    {
+      "key": "AUTH-001@1.0",
+      "code": "AUTH-001",
+      "version": "1.0",
+      "title": "运营事项审批权限规定",
+      "file": "corpus/AUTH-001_v1.0.md",
+      "sha256": "790bd5bba5a55d499863a892ea7385caaa0fd3237c96bf3a36e761495ee1f512",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-07-01"
+    },
+    {
+      "key": "AUTH-001@2.0",
+      "code": "AUTH-001",
+      "version": "2.0",
+      "title": "运营事项审批权限规定",
+      "file": "corpus/AUTH-001_v2.0.md",
+      "sha256": "06fc4068dc4ad8c298b8293476a3b41888760593e69426b9f4164a2a78beb8bc",
+      "effective_from": "2026-07-01",
+      "effective_to": null
+    },
+    {
+      "key": "BIZ-001@1.0",
+      "code": "BIZ-001",
+      "version": "1.0",
+      "title": "公司与代运营服务介绍",
+      "file": "corpus/BIZ-001_v1.0.md",
+      "sha256": "d1f33c6fc970c9246ba9c3ba939a5ba55393edcfcc7da9bf434c940706175493",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "BIZ-002@1.0",
+      "code": "BIZ-002",
+      "version": "1.0",
+      "title": "服务范围与承诺边界",
+      "file": "corpus/BIZ-002_v1.0.md",
+      "sha256": "13ddbee86f525b3ab2a49dec5e35bff57508b9207cdeb9c3866f74bcf9d8c286",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "CONTACT-001@1.0",
+      "code": "CONTACT-001",
+      "version": "1.0",
+      "title": "业务事项咨询岗位索引",
+      "file": "corpus/CONTACT-001_v1.0.md",
+      "sha256": "4ef2f0e1ed3baae692b2074a3edccac04a04b9342f83bd1ae18751206cc92892",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "DATA-001@1.0",
+      "code": "DATA-001",
+      "version": "1.0",
+      "title": "常见经营指标解释",
+      "file": "corpus/DATA-001_v1.0.md",
+      "sha256": "c4ca9c3da8fa215b2545eb0a29f17f5fa12e08c1c2328a6d4a1ad1c70a3e2772",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "DATA-002@1.0",
+      "code": "DATA-002",
+      "version": "1.0",
+      "title": "报表位置与问题分析指引",
+      "file": "corpus/DATA-002_v1.0.md",
+      "sha256": "548f5289cad10fba9a5a5566069affb891da9f121d0e30048251aaecfb7bd21d",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-001@1.0",
+      "code": "FLOW-001",
+      "version": "1.0",
+      "title": "客户项目启动流程",
+      "file": "corpus/FLOW-001_v1.0.md",
+      "sha256": "bdec0ff709109dee4cf2a0f97338522e25d64f930ef265715599ee51383e40e2",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-002@1.0",
+      "code": "FLOW-002",
+      "version": "1.0",
+      "title": "销售到运营的项目交接规范",
+      "file": "corpus/FLOW-002_v1.0.md",
+      "sha256": "5f613f74df6fb2ef7c6e6edb8d948b8a86ccd7598bc8650992bb8a0494be0d12",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-003@1.0",
+      "code": "FLOW-003",
+      "version": "1.0",
+      "title": "日常运营与周报流程",
+      "file": "corpus/FLOW-003_v1.0.md",
+      "sha256": "7b664360134ac808f6e9f5ffd07f90eabae4754def7e0ac4ccc9636f3ba190d0",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-004@1.0",
+      "code": "FLOW-004",
+      "version": "1.0",
+      "title": "促销活动策划与上线流程",
+      "file": "corpus/FLOW-004_v1.0.md",
+      "sha256": "31bffce95ba421f9255b8fa5ad8982f15768f161a4c7674fae42e81238597bb2",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-005@1.0",
+      "code": "FLOW-005",
+      "version": "1.0",
+      "title": "广告投放协作流程",
+      "file": "corpus/FLOW-005_v1.0.md",
+      "sha256": "f195100fc7f207214d71bf12dd2f73155bba7dba7d6a86eb5a3e725eb9d1fc9a",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-006@1.0",
+      "code": "FLOW-006",
+      "version": "1.0",
+      "title": "活动临时变更与审批流程",
+      "file": "corpus/FLOW-006_v1.0.md",
+      "sha256": "d10e5317ca1f2bfe7a3754dcd009761eab683b55a994411c2c34e0f90505c657",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "FLOW-007@1.0",
+      "code": "FLOW-007",
+      "version": "1.0",
+      "title": "客诉与异常升级流程",
+      "file": "corpus/FLOW-007_v1.0.md",
+      "sha256": "a2d0b874678d39324080b7e86d227c7e6caa827251a5913b1fb4042e939d19b0",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "HR-001@1.0",
+      "code": "HR-001",
+      "version": "1.0",
+      "title": "新员工入职与学习指引",
+      "file": "corpus/HR-001_v1.0.md",
+      "sha256": "52e2fe489aa22aa6f142b7e05a0250a5dfbf5c87d4c06049cd22274316df0b3c",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "HR-002@1.0",
+      "code": "HR-002",
+      "version": "1.0",
+      "title": "试用期工作与授权规定",
+      "file": "corpus/HR-002_v1.0.md",
+      "sha256": "b52c4a01a0c1ee6f25eb1a6fbbb3ca2f9a8dc3ac2ab40f06617e7346453f482c",
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-07-01"
+    },
+    {
+      "key": "HR-002@2.0",
+      "code": "HR-002",
+      "version": "2.0",
+      "title": "试用期工作与授权规定",
+      "file": "corpus/HR-002_v2.0.md",
+      "sha256": "5488caee530106f444434a8d61c52735a3eff8fbae5e5b0df3ec9c5973eddd04",
+      "effective_from": "2026-07-01",
+      "effective_to": null
+    },
+    {
+      "key": "JOB-001@1.0",
+      "code": "JOB-001",
+      "version": "1.0",
+      "title": "店铺运营专员岗位说明",
+      "file": "corpus/JOB-001_v1.0.md",
+      "sha256": "bcb730ac0fbf1db132b635837b02ed19bbc79c672dc9262f122b1c259f2c671d",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "JOB-002@1.0",
+      "code": "JOB-002",
+      "version": "1.0",
+      "title": "客服岗位说明",
+      "file": "corpus/JOB-002_v1.0.md",
+      "sha256": "a3cc1e329073052292459b75a8f992098b0731f621735911dc4e7ef94628735e",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "key": "ORG-001@1.0",
+      "code": "ORG-001",
+      "version": "1.0",
+      "title": "部门职责与协作关系",
+      "file": "corpus/ORG-001_v1.0.md",
+      "sha256": "fdc69fc04ab409ef5390ed7048d9cd51a097488fe4f02726e7080e46dabb596c",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    }
+  ],
+  "cases": [
+    {
+      "id": "R001",
+      "category": "single",
+      "question": "公司主要为哪些客户提供什么服务？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "BIZ-001@1.0",
+          "quote": "服务对象是已签约的品牌客户。"
+        }
+      ]
+    },
+    {
+      "id": "R002",
+      "category": "single",
+      "question": "广告代投属于所有客户的标准服务吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "BIZ-002@1.0",
+          "quote": "广告代投只有在合同明确包含时才提供。"
+        }
+      ]
+    },
+    {
+      "id": "R003",
+      "category": "single",
+      "question": "销售、客服和投放组分别负责什么？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "ORG-001@1.0",
+          "quote": "投放组负责广告计划与执行"
+        }
+      ]
+    },
+    {
+      "id": "R004",
+      "category": "single",
+      "question": "运营专员日常要做哪些工作？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "JOB-001@1.0",
+          "quote": "运营专员维护商品、编写活动方案、检查库存与页面、提交周报"
+        }
+      ]
+    },
+    {
+      "id": "R005",
+      "category": "single",
+      "question": "正式客服可以自行修改促销规则吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "JOB-002@1.0",
+          "quote": "客服不得自行修改促销规则或承诺未批准的折扣。"
+        }
+      ]
+    },
+    {
+      "id": "R006",
+      "category": "single",
+      "question": "客户项目从签约到执行的启动顺序是什么？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-001@1.0",
+          "quote": "项目负责人组织启动会"
+        }
+      ]
+    },
+    {
+      "id": "R007",
+      "category": "single",
+      "question": "销售移交项目时要交哪些资料？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-002@1.0",
+          "quote": "销售移交合同、服务范围、客户联系人、商品清单、店铺授权状态和已确认的时间节点。"
+        }
+      ]
+    },
+    {
+      "id": "R008",
+      "category": "single",
+      "question": "运营每日检查哪些内容？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-003@1.0",
+          "quote": "检查商品状态、库存、活动页面、咨询与异常。"
+        }
+      ]
+    },
+    {
+      "id": "R009",
+      "category": "single",
+      "question": "准备促销活动方案要核对什么？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-004@1.0",
+          "quote": "核对商品、库存、价格、优惠叠加、活动时间与素材"
+        }
+      ]
+    },
+    {
+      "id": "R010",
+      "category": "single",
+      "question": "运营发起广告投放前要给投放组准备什么？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-005@1.0",
+          "quote": "运营提供活动目标、商品链接、时间、素材与拟定预算"
+        }
+      ]
+    },
+    {
+      "id": "R011",
+      "category": "single",
+      "question": "客户临时修改活动时间，需要经过哪些步骤？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-006@1.0",
+          "quote": "运营主管审核；客户确认后再执行"
+        }
+      ]
+    },
+    {
+      "id": "R012",
+      "category": "single",
+      "question": "遇到价格错误应立即通知哪个岗位？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-007@1.0",
+          "quote": "价格错误、活动配置错误立即通知运营主管"
+        }
+      ]
+    },
+    {
+      "id": "R013",
+      "category": "single",
+      "question": "转化率和客单价怎么计算？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "DATA-001@1.0",
+          "quote": "客单价为成交金额除以成交买家数。"
+        }
+      ]
+    },
+    {
+      "id": "R014",
+      "category": "single",
+      "question": "公司的经营周报放在哪个目录？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "DATA-002@1.0",
+          "quote": "周报在项目工作区的经营周报目录"
+        }
+      ]
+    },
+    {
+      "id": "R015",
+      "category": "single",
+      "question": "新员工入职第一周如何安排学习？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-001@1.0",
+          "quote": "第五天向主管汇报学习问题。"
+        }
+      ]
+    },
+    {
+      "id": "R016",
+      "category": "single",
+      "question": "试用期运营能独立处理哪些准备工作？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "可独立整理周报草稿、检查商品和准备活动材料。"
+        }
+      ]
+    },
+    {
+      "id": "R017",
+      "category": "single",
+      "question": "正式运营的提交权是否等于活动批准权？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "AUTH-001@2.0",
+          "quote": "不得把提交权理解为批准权"
+        }
+      ]
+    },
+    {
+      "id": "R018",
+      "category": "single",
+      "question": "账号与入职资料的问题应咨询谁？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "CONTACT-001@1.0",
+          "quote": "账号和入职资料：人事专员"
+        }
+      ]
+    },
+    {
+      "id": "R019",
+      "category": "single",
+      "question": "能不能向客户保证一个最低销售额？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "BIZ-002@1.0",
+          "quote": "不承诺保底销售额"
+        }
+      ]
+    },
+    {
+      "id": "R020",
+      "category": "single",
+      "question": "客户一直催上线，但店铺授权没给齐，可以先开工吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-002@1.0",
+          "quote": "缺少合同范围或授权时不得直接上线"
+        }
+      ]
+    },
+    {
+      "id": "R021",
+      "category": "single",
+      "question": "每周五我需要整理哪些经营数据？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-003@1.0",
+          "quote": "每周五整理成交、流量、转化和退款指标"
+        }
+      ]
+    },
+    {
+      "id": "R022",
+      "category": "single",
+      "question": "大促上线前，除了价格，还需要查库存和优惠叠加吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-004@1.0",
+          "quote": "库存、价格、优惠叠加、活动时间与素材"
+        }
+      ]
+    },
+    {
+      "id": "R023",
+      "category": "single",
+      "question": "我是客服，能直接调整广告预算吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-005@1.0",
+          "quote": "运营专员和客服不得直接修改广告预算。"
+        }
+      ]
+    },
+    {
+      "id": "R024",
+      "category": "single",
+      "question": "收到消费者投诉，需要记录哪些事实？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-007@1.0",
+          "quote": "客服记录客户、订单或活动标识、问题时间、事实与截图"
+        }
+      ]
+    },
+    {
+      "id": "R025",
+      "category": "single",
+      "question": "GMV下降就一定是广告没有效果吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "DATA-001@1.0",
+          "quote": "不能只凭销售额下降判断广告无效"
+        }
+      ]
+    },
+    {
+      "id": "R026",
+      "category": "single",
+      "question": "分析经营问题时，先统一口径还是先找投放背锅？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "DATA-002@1.0",
+          "quote": "先统一时间和指标口径"
+        }
+      ]
+    },
+    {
+      "id": "R027",
+      "category": "single",
+      "question": "试用期运营对外提交活动方案前要谁复核？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "对外提交活动方案前需导师复核"
+        }
+      ]
+    },
+    {
+      "id": "R028",
+      "category": "single",
+      "question": "有统一的员工自主打折额度吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "AUTH-001@2.0",
+          "quote": "公司没有通用的员工自主折扣额度。"
+        }
+      ]
+    },
+    {
+      "id": "R029",
+      "category": "single",
+      "question": "不知道合同范围找谁确认？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "CONTACT-001@1.0",
+          "quote": "合同范围：销售负责人"
+        }
+      ]
+    },
+    {
+      "id": "R030",
+      "category": "single",
+      "question": "客服同事转正了，就有运营审批权限了吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "JOB-002@1.0",
+          "quote": "转正不意味着获得运营审批权限。"
+        }
+      ]
+    },
+    {
+      "id": "R031",
+      "category": "single",
+      "question": "店铺运营可以替投放组改预算吗？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "JOB-001@1.0",
+          "quote": "不代替投放组调整广告预算。"
+        }
+      ]
+    },
+    {
+      "id": "R032",
+      "category": "single",
+      "question": "导师和主管在试用期分别负责什么？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-001@1.0",
+          "quote": "导师负责任务指导和材料复核，主管负责权限和考核。"
+        }
+      ]
+    },
+    {
+      "id": "R033",
+      "category": "multi_document",
+      "question": "试用期运营准备活动材料可以独立做吗，临时改折扣又该走什么流程？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "可独立整理周报草稿"
+        },
+        {
+          "document": "FLOW-006@1.0",
+          "quote": "先记录原因和影响范围"
+        }
+      ]
+    },
+    {
+      "id": "R034",
+      "category": "multi_document",
+      "question": "客服收到临时改活动规则的要求，能答应吗，转交后怎么审批？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "JOB-002@1.0",
+          "quote": "客服记录诉求并交运营专员"
+        },
+        {
+          "document": "FLOW-006@1.0",
+          "quote": "运营主管审核；客户确认后再执行"
+        }
+      ]
+    },
+    {
+      "id": "R035",
+      "category": "multi_document",
+      "question": "广告服务是否属于标准合同范围，确认包含后怎么发起投放？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "BIZ-002@1.0",
+          "quote": "广告代投只有在合同明确包含时才提供。"
+        },
+        {
+          "document": "FLOW-005@1.0",
+          "quote": "投放组制定投放计划"
+        }
+      ]
+    },
+    {
+      "id": "R036",
+      "category": "multi_document",
+      "question": "周报应该整理哪些指标，转化率和客单价分别怎么算？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-003@1.0",
+          "quote": "成交、流量、转化和退款指标"
+        },
+        {
+          "document": "DATA-001@1.0",
+          "quote": "转化率为同口径成交人数除以访客人数"
+        }
+      ]
+    },
+    {
+      "id": "R037",
+      "category": "multi_document",
+      "question": "客户项目启动前要什么资料，销售实际交接清单包括哪些内容？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-001@1.0",
+          "quote": "需要合同服务范围、店铺授权、商品资料"
+        },
+        {
+          "document": "FLOW-002@1.0",
+          "quote": "已确认的时间节点"
+        }
+      ]
+    },
+    {
+      "id": "R038",
+      "category": "multi_document",
+      "question": "经营周报去哪找，销售额下降能否直接归咎于广告？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "DATA-002@1.0",
+          "quote": "经营周报目录"
+        },
+        {
+          "document": "DATA-001@1.0",
+          "quote": "不能只凭销售额下降判断广告无效"
+        }
+      ]
+    },
+    {
+      "id": "R039",
+      "category": "multi_document",
+      "question": "运营日常发现活动价格错误应先做什么，再向谁升级？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "FLOW-003@1.0",
+          "quote": "先暂停错误入口"
+        },
+        {
+          "document": "FLOW-007@1.0",
+          "quote": "立即通知运营主管"
+        }
+      ]
+    },
+    {
+      "id": "R040",
+      "category": "multi_document",
+      "question": "试用期提交活动材料需要导师复核吗，这能代替主管审批吗，活动还需谁确认？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "导师复核不能替代主管审批。"
+        },
+        {
+          "document": "AUTH-001@2.0",
+          "quote": "并获得客户确认"
+        }
+      ]
+    },
+    {
+      "id": "R041",
+      "category": "version",
+      "question": "2026年6月30日试用期活动材料可以直接交主管吗？",
+      "as_of": "2026-06-30",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@1.0",
+          "quote": "旧版未要求导师预审"
+        }
+      ]
+    },
+    {
+      "id": "R042",
+      "category": "version",
+      "question": "2026年7月1日试用期活动材料提交前需导师复核吗？",
+      "as_of": "2026-07-01",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "对外提交活动方案前需导师复核"
+        }
+      ]
+    },
+    {
+      "id": "R043",
+      "category": "version",
+      "question": "2026年6月20日审批制度对试用期材料提交有什么规定？",
+      "as_of": "2026-06-20",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "AUTH-001@1.0",
+          "quote": "试用期材料可直接交主管"
+        }
+      ]
+    },
+    {
+      "id": "R044",
+      "category": "version",
+      "question": "2026年7月20日审批制度对试用期材料增加了什么步骤？",
+      "as_of": "2026-07-20",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "AUTH-001@2.0",
+          "quote": "试用期运营的审批材料必须先由导师复核。"
+        }
+      ]
+    },
+    {
+      "id": "R045",
+      "category": "version",
+      "question": "2026年1月1日活动审批是否要主管审核和客户确认？",
+      "as_of": "2026-01-01",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "AUTH-001@1.0",
+          "quote": "活动由运营主管审核并获得客户确认"
+        }
+      ]
+    },
+    {
+      "id": "R046",
+      "category": "version",
+      "question": "2026年6月30日试用期提交材料的权限，试用期规定和审批制度分别怎么说？",
+      "as_of": "2026-06-30",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@1.0",
+          "quote": "旧版未要求导师预审"
+        },
+        {
+          "document": "AUTH-001@1.0",
+          "quote": "试用期材料可直接交主管"
+        }
+      ]
+    },
+    {
+      "id": "R047",
+      "category": "version",
+      "question": "2026年7月1日试用期规定与审批制度如何要求导师复核？",
+      "as_of": "2026-07-01",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "对外提交活动方案前需导师复核"
+        },
+        {
+          "document": "AUTH-001@2.0",
+          "quote": "必须先由导师复核"
+        }
+      ]
+    },
+    {
+      "id": "R048",
+      "category": "version",
+      "question": "当前试用期的导师预审要求与折扣批准权有什么区别？",
+      "as_of": "2026-10-21",
+      "answerable": true,
+      "gold": [
+        {
+          "document": "HR-002@2.0",
+          "quote": "导师复核不能替代主管审批。"
+        },
+        {
+          "document": "AUTH-001@2.0",
+          "quote": "促销折扣、活动规则和上线时间由运营主管审核"
+        }
+      ]
+    },
+    {
+      "id": "R049",
+      "category": "unanswerable",
+      "question": "2025年12月31日公司试用期运营权限具体是什么？",
+      "as_of": "2025-12-31",
+      "answerable": false,
+      "gold": []
+    },
+    {
+      "id": "R050",
+      "category": "unanswerable",
+      "question": "公司今年的带薪年假究竟有几天？",
+      "as_of": "2026-10-21",
+      "answerable": false,
+      "gold": []
+    },
+    {
+      "id": "R051",
+      "category": "unanswerable",
+      "question": "运营主管的私人手机号是多少？",
+      "as_of": "2026-10-21",
+      "answerable": false,
+      "gold": []
+    },
+    {
+      "id": "R052",
+      "category": "unanswerable",
+      "question": "公司本周真实GMV是多少万元？",
+      "as_of": "2026-10-21",
+      "answerable": false,
+      "gold": []
+    },
+    {
+      "id": "R053",
+      "category": "unanswerable",
+      "question": "请给出员工自主批准折扣的具体百分比额度。",
+      "as_of": "2026-10-21",
+      "answerable": false,
+      "gold": []
+    },
+    {
+      "id": "R054",
+      "category": "unanswerable",
+      "question": "公司对客诉赔偿统一规定的金额上限是多少？",
+      "as_of": "2026-10-21",
+      "answerable": false,
+      "gold": []
+    }
+  ]
+}
